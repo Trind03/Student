@@ -1,11 +1,29 @@
 import java.util.*;
 import java.util.ArrayList;
+
+import sas.Professor;
 import sas.Student;
+import sas.Subject;
+
 public class AdminSystem
 {
     ArrayList<Student> students = new ArrayList<Student>();
+    ArrayList<Subject> subjects = new ArrayList<Subject>();
+    ArrayList<Professor> professors = new ArrayList<Professor>();
+
     char input;
-    final static String[] cmds  = { //commands
+    final static String[] commands = {
+            "Select what you want to modify:",
+            "- Student",
+            "- Subject",
+            "- Professor\n",
+
+            "Extra:",
+            "- Check software version",
+            "- Exit software",
+    };
+
+    /*
             "Create a student",
             "Select student",
             "View student",
@@ -26,67 +44,33 @@ public class AdminSystem
 
             "Software version",
             "Exit software"
-    };
+     */
 
-    public void menu()
+    public void mainMenu()
     {
-
-            System.out.flush();
-            System.out.println("**** Main Menu ****\n");
-            for (int i = 0; i != cmds.length; i++)
-            {
-                System.out.println((i++) + ". " + cmds[i]);
-            }
-            System.out.print("Field: ");
-            String userInput = inputUser(); //<-- String eller int
-            System.out.println(userInput);
-            switch (userInput)
-            {
-
-                case "1":
-                    menu();
-                case "2":
-                    System.exit(0);
-                case "3":
-                    menu();
-                case "4":
-                    System.exit(0);
-                case "5":
-                    menu();
-                case "6":
-                    System.exit(0);
-                case "7":
-                    menu();
-                case "8":
-                    System.exit(0);
-                case "9":
-                    menu();
-                case "10":
-                    System.exit(0);
-
-                case "11":
-                    menu();
-                case "12":
-                    System.exit(0);
-
-                case "13":
-                    menu();
-                case "14":
-                    System.exit(0);
-
-                case "15":
-                    menu();
-                case "16":
-                    System.exit(0);
-                case "17":
+        Student student = new Student("James",1);
+        System.out.flush();
+        System.out.println("**** Main Menu ****\n");
+        for (int i = 0; i != commands.length; i++)
+        {
+            //System.out.println((i++) + ". " + commands[i]);
+            System.out.println(commands[i]);
+        }
+        System.out.print("Field: ");
+        String userInput = inputUser(); //<-- String eller int
+        System.out.println(userInput);
+        switch (userInput)
+        {
+            case "1":
+                mainMenu();
+            case "2":
                 System.exit(0);
-                default:
-                    menu();
-            }
-
+            default:
+                mainMenu();
+        }
     }
 
-    public String inputUser(){
+    public String inputUser() {
         Scanner scanner = new Scanner(System.in);
         String userInput = scanner.nextLine();
         scanner.close();
@@ -96,5 +80,4 @@ public class AdminSystem
             default -> userInput;
         };
     }
-
 }
