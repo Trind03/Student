@@ -1,21 +1,13 @@
 package sas;
 
-public class Professor implements ICommonReference{
+public class Professor// implements ICommonReference
+{
     String Name;
     int Age;
-
-
-    Professor(String name) {
+    Professor(String name,int age)
+    {
         Name = name;
+        Age = age;
     }
 
-    @Override
-    public void getInformation() {
-
-    }
-
-    @Override
-    public String getName() {
-        return Name;
-    }
 }
