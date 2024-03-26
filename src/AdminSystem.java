@@ -7,20 +7,17 @@ import sas.Subject;
 
 public class AdminSystem
 {
-    ArrayList<Student> students = new ArrayList<Student>();
-    ArrayList<Subject> subjects = new ArrayList<Subject>();
-    ArrayList<Professor> professors = new ArrayList<Professor>();
+    public static ArrayList<Student> students = new ArrayList<Student>();
+    public static ArrayList<Subject> subjects = new ArrayList<Subject>();
+    public static ArrayList<Professor> professors = new ArrayList<Professor>();
 
     char input;
     final static String[] commands = {
-            "Select what you want to modify:",
-            "- Student",
-            "- Subject",
-            "- Professor\n",
-
-            "Extra:",
-            "- Check software version",
-            "- Exit software",
+            " - Create a student",
+            " - Create a Subject",
+            " - Create a Professor",
+            " - Check software version",
+            " - Exit software",
     };
 
     /*
@@ -46,38 +43,58 @@ public class AdminSystem
             "Exit software"
      */
 
-    public void mainMenu()
+    public void Main_Menu()
     {
-        Student student = new Student("James",1);
-        System.out.flush();
-        System.out.println("**** Main Menu ****\n");
-        for (int i = 0; i != commands.length; i++)
+        String userInput;
+        Scanner scanner = new Scanner(System.in);
+        while(true)
         {
-            //System.out.println((i++) + ". " + commands[i]);
-            System.out.println(commands[i]);
+            System.out.println("**** Main Menu ****\n");
+
+            for (int i = 0; i != commands.length; i++)
+                System.out.println(i + commands[i]);
+
+            System.out.print("Field: ");
+            userInput = scanner.nextLine();
+            System.out.println(userInput);
+
+            switch (userInput)
+            {
+                case "1":
+                    Create_Student();
+                case "2":
+                    Create_Subject();
+                    break;
+                case "3":
+                    Create_Professor();
+                    break;
+                case "4":
+                    Soft_Version();
+                    break;
+                case "5":
+                    System.exit(0);
+                default:
+                    continue;
+            }
         }
-        System.out.print("Field: ");
-        String userInput = inputUser(); //<-- String eller int
-        System.out.println(userInput);
-        switch (userInput)
-        {
-            case "1":
-                mainMenu();
-            case "2":
-                System.exit(0);
-            default:
-                mainMenu();
-        }
+
+    }
+    public void Create_Student()
+    {
+
+    }
+    public void Soft_Version()
+    {
+
     }
 
-    public String inputUser() {
-        Scanner scanner = new Scanner(System.in);
-        String userInput = scanner.nextLine();
-        scanner.close();
-        return switch (userInput) {
-            case null -> inputUser();
-            case "" -> inputUser();
-            default -> userInput;
-        };
+    public void Create_Subject()
+    {
+
+    }
+
+    public void Create_Professor()
+    {
+
     }
 }

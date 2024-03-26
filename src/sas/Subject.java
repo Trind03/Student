@@ -4,15 +4,8 @@ public class Subject
 {
     String Name;
 
-    /*
+    Subject(String name)
     {
-        name:"",
-        id:"",
-
-    }
-     */
-
-    Subject(String name){
         Name = name;
     }
 }
