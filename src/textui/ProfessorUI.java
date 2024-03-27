@@ -1,6 +1,5 @@
 package textui;
 import Dependencies.Dependencies;
-
 public class ProfessorUI
 {
     static String userInput;
@@ -45,23 +44,28 @@ public class ProfessorUI
         }
     }
 
-    public static void Create_Professor(){
+    public static void Create_Professor()
+    {
         //Student theStudent = new Student();
     }
 
-    public static void Select_Professor(){
+    public static void Select_Professor()
+    {
         //Student theStudent = new Student();
     }
 
-    public static void View_Professor(){
+    public static void View_Professor()
+    {
         //Student theStudent = new Student();
     }
 
-    public static void View_All_Professors(){
+    public static void View_All_Professors()
+    {
         //Student theStudent = new Student();
     }
 
-    public static void Delete_Professor(){
+    public static void Delete_Professor()
+    {
         //Student theStudent = new Student();
     }
 

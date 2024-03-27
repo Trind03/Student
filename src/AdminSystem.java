@@ -12,9 +12,9 @@ import static Dependencies.Dependencies._scanner;
 public class AdminSystem
 {
     private static final String _Soft_Version = "1.2.2";
-    private static ArrayList<Student> _students = new ArrayList<Student>();
-    private static ArrayList<Subject> _subjects = new ArrayList<Subject>();
-    private static ArrayList<Professor> _professors = new ArrayList<Professor>();
+    private static final ArrayList<Student> _students = new ArrayList<Student>();
+    private static final ArrayList<Subject> _subjects = new ArrayList<Subject>();
+    private static final ArrayList<Professor> _professors = new ArrayList<Professor>();
     private final ProfessorUI _professorUI = new ProfessorUI();
     private final StudentUI _studentUI = new StudentUI();
     private final SubjectUI _subjectUI = new SubjectUI();

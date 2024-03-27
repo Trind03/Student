@@ -3,18 +3,18 @@ import Dependencies.Dependencies;
 
 public class StudentUI
 {
-    String userInput;
+    static String userInput;
 
     public void Student_Menu()
     {
         final String[] commands =
-                {
-                        " - Create a student",
-                        " - Select student",
-                        " - View student",
-                        " - View all students",
-                        " - Delete selected student\n",
-                };
+        {
+            " - Create a student",
+            " - Select student",
+            " - View student",
+            " - View all students",
+            " - Delete selected student\n",
+        };
 
         System.out.println("**** Student Menu ****\n");
 
