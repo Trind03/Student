@@ -1,18 +1,22 @@
 package sas;
+import java.util.ArrayList;
 
 import static java.util.UUID.randomUUID;
 
 public class Student
 {
-    Subject[] Fag;
-    String Name;
-    int Age;
-    String IdentyGuy;
+    public ArrayList<Subject>Subject = new ArrayList<Subject>();
+    public String Name;
+    public int Age;
+    public String UserID;
 
-    public Student(String name,int age)
+
+
+    public Student(String name,int age,ArrayList<Subject>subject)
     {
         Name = name;
         Age = age;
-        IdentyGuy = String.valueOf(randomUUID());
+        UserID = String.valueOf(randomUUID());
+        Subject = subject;
     }
 }

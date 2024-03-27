@@ -1,100 +1,136 @@
-import java.util.*;
-import java.util.ArrayList;
-
 import sas.Professor;
 import sas.Student;
 import sas.Subject;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class AdminSystem
 {
+    private static final Scanner _scanner = new Scanner(System.in);
+    private static final String _Soft_Version = "1.2.2";
     public static ArrayList<Student> students = new ArrayList<Student>();
     public static ArrayList<Subject> subjects = new ArrayList<Subject>();
     public static ArrayList<Professor> professors = new ArrayList<Professor>();
-
-    char input;
-    final static String[] commands = {
-            " - Create a student",
-            " - Create a Subject",
-            " - Create a Professor",
-            " - Check software version",
-            " - Exit software",
-    };
-
-    /*
-            "Create a student",
-            "Select student",
-            "View student",
-            "View all students",
-            "Delete selected student\n",
-
-            "Create subject",
-            "Select subject",
-            "View subject",
-            "View all subjects",
-            "Delete selected subject\n",
-
-            "Create professor",
-            "Select professor",
-            "View professor",
-            "View all professors",
-            "Delete selected subject\n",
-
-            "Software version",
-            "Exit software"
-     */
+    String userInput;
 
     public void Main_Menu()
     {
-        String userInput;
-        Scanner scanner = new Scanner(System.in);
-        while(true)
+        final String[] commands =
         {
-            System.out.println("**** Main Menu ****\n");
+            " - Student",
+            " - Subject",
+            " - Professor",
+            " - Check software version",
+            " - Exit software",
+        };
 
-            for (int i = 0; i != commands.length; i++)
-                System.out.println(i + commands[i]);
+        System.out.println("**** Main Menu ****\n");
 
-            System.out.print("Field: ");
-            userInput = scanner.nextLine();
-            System.out.println(userInput);
+        for (int i = 0; i != commands.length; i++)
+            System.out.println(i + commands[i]);
 
-            switch (userInput)
-            {
-                case "1":
-                    Create_Student();
-                case "2":
-                    Create_Subject();
-                    break;
-                case "3":
-                    Create_Professor();
-                    break;
-                case "4":
-                    Soft_Version();
-                    break;
-                case "5":
-                    System.exit(0);
-                default:
-                    continue;
-            }
+        System.out.print("Field: ");
+        userInput = _scanner.nextLine();
+        System.out.println(userInput);
+
+        switch (userInput)
+        {
+            case "1":
+                Student_Menu();
+                break;
+            case "2":
+                Subject_Menu();
+                break;
+            case "3":
+                Professor_Menu();
+                break;
+            case "4":
+                Soft_Version();
+                break;
+            case "5":
+                System.exit(0);
+            default:
+                Main_Menu();
         }
-
     }
-    public void Create_Student()
+
+    public void Student_Menu()
     {
+        final String[] commands =
+        {
+            " - Create a student",
+            " - Select student",
+            " - View student",
+            " - View all students",
+            " - Delete selected student\n",
+        };
 
+        System.out.println("**** Main Menu ****\n");
+
+        for (int i = 0; i != commands.length; i++)
+            System.out.println(i + commands[i]);
+
+        System.out.print("Field: ");
+        userInput = _scanner.nextLine();
+        System.out.println(userInput);
+
+        switch (userInput)
+        {
+            case "1":
+                Create_Student();
+                break;
+            case "2":
+                //Select_Student();
+                break;
+            case "3":
+                Professor_Menu();
+                break;
+            case "4":
+                Soft_Version();
+                break;
+            case "5":
+                System.exit(0);
+            default:
+                Student_Menu();
+        }
     }
+
+    public void Create_Student(){
+        //Student theStudent = new Student();
+    }
+
+    public void Select_Student(){
+        //Student theStudent = new Student();
+    }
+
+    public void Subject_Menu()
+    {
+        final String[] commands =
+        {
+            " - Create subject",
+            " - Select subject",
+            " - View subject",
+            " - View all subjects",
+            " - Delete selected subject\n",
+        };
+    }
+
+    public void Professor_Menu()
+    {
+        final String[] commands =
+        {
+            " - Create professor",
+            " - Select professor",
+            " - View professor",
+            " - View all professors",
+            " - Delete selected subject\n",
+        };
+    }
+
     public void Soft_Version()
     {
-
+        System.out.println(_Soft_Version);
     }
 
-    public void Create_Subject()
-    {
-
-    }
-
-    public void Create_Professor()
-    {
-
-    }
 }
