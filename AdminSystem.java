@@ -1,23 +1,16 @@
-import sas.Professor;
-import sas.Student;
-import sas.Subject;
 import textui.ProfessorUI;
 import textui.StudentUI;
-import java.util.ArrayList;
-import java.util.Scanner;
-
 import textui.SubjectUI;
+
+import java.util.Scanner;
 public class AdminSystem
 {
-    private Scanner _scanner = new Scanner(System.in);
+    private final Scanner _scanner = new Scanner(System.in);
     private static final String _Soft_Version = "1.2.2";
-    private static final ArrayList<Subject> _subjects = new ArrayList<Subject>();
-    private static final ArrayList<Professor> _professors = new ArrayList<Professor>();
     private final ProfessorUI _professorUI = new ProfessorUI();
     private final StudentUI _studentUI = new StudentUI();
     private final SubjectUI _subjectUI = new SubjectUI();
     String userInput;
-
 
     public void Main_Menu()
     {
