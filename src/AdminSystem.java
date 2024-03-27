@@ -14,6 +14,13 @@ public class AdminSystem
     public static ArrayList<Professor> professors = new ArrayList<Professor>();
     String userInput;
 
+    private void Display_Menu(String[] commands)
+    {
+        int nr = 0;
+        for (int i = 0; i != commands.length; i++){
+            System.out.println(++nr + "." + commands[i]);
+        }
+    }
     public void Main_Menu()
     {
         final String[] commands =
@@ -27,8 +34,7 @@ public class AdminSystem
 
         System.out.println("**** Main Menu ****\n");
 
-        for (int i = 0; i != commands.length; i++)
-            System.out.println(i + commands[i]);
+        Display_Menu(commands);
 
         System.out.print("Field: ");
         userInput = _scanner.nextLine();
@@ -55,6 +61,7 @@ public class AdminSystem
         }
     }
 
+
     public void Student_Menu()
     {
         final String[] commands =
@@ -68,8 +75,7 @@ public class AdminSystem
 
         System.out.println("**** Main Menu ****\n");
 
-        for (int i = 0; i != commands.length; i++)
-            System.out.println(i + commands[i]);
+        Display_Menu(commands);
 
         System.out.print("Field: ");
         userInput = _scanner.nextLine();
@@ -104,6 +110,18 @@ public class AdminSystem
         //Student theStudent = new Student();
     }
 
+    public void View_Student(){
+        //Student theStudent = new Student();
+    }
+
+    public void View_All_Students(){
+        //Student theStudent = new Student();
+    }
+
+    public void Delete_Student(){
+        //Student theStudent = new Student();
+    }
+
     public void Subject_Menu()
     {
         final String[] commands =
@@ -114,6 +132,36 @@ public class AdminSystem
             " - View all subjects",
             " - Delete selected subject\n",
         };
+
+        System.out.println("**** Subject Menu ****\n");
+
+
+
+
+        System.out.print("Field: ");
+        userInput = _scanner.nextLine();
+        System.out.println(userInput);
+
+        switch (userInput)
+        {
+            case "1":
+                Create_Student();
+                break;
+            case "2":
+                //Select_Student();
+                break;
+            case "3":
+                Professor_Menu();
+                break;
+            case "4":
+                Soft_Version();
+                break;
+            case "5":
+                System.exit(0);
+            default:
+                Student_Menu();
+        }
+
     }
 
     public void Professor_Menu()
