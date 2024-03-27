@@ -1,12 +1,14 @@
 package textui;
 import Dependencies.Dependencies;
+import sas.Professor;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ProfessorUI
 {
     private final Scanner _scanner = new Scanner(System.in);
-
+    private static ArrayList<Professor> _professors = new ArrayList<Professor>();
     static String userInput;
 
     public void Professor_Menu()
@@ -67,7 +69,16 @@ public class ProfessorUI
 
     public static void View_All_Professors()
     {
-        //Student theStudent = new Student();
+        int Nr = 0;
+        if(!_professors.isEmpty())
+        {
+            for (Professor student : _professors){
+                System.out.println("**** Professor Number "+(++Nr)+". ****");
+                System.out.println();
+                System.out.println(student.getName());
+                System.out.println(student.getAge());
+            }
+        }
     }
 
     public static void Delete_Professor()
