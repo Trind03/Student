@@ -1,26 +1,26 @@
 import sas.Professor;
 import sas.Student;
 import sas.Subject;
-
+import textui.ProfessorUI;
+import textui.StudentUI;
 import java.util.ArrayList;
-import java.util.Scanner;
+import textui.SubjectUI;
+
+import static Dependencies.Dependencies.Display_Menu;
+import static Dependencies.Dependencies._scanner;
 
 public class AdminSystem
 {
-    private static final Scanner _scanner = new Scanner(System.in);
     private static final String _Soft_Version = "1.2.2";
-    public static ArrayList<Student> students = new ArrayList<Student>();
-    public static ArrayList<Subject> subjects = new ArrayList<Subject>();
-    public static ArrayList<Professor> professors = new ArrayList<Professor>();
+    private static ArrayList<Student> _students = new ArrayList<Student>();
+    private static ArrayList<Subject> _subjects = new ArrayList<Subject>();
+    private static ArrayList<Professor> _professors = new ArrayList<Professor>();
+    private final ProfessorUI _professorUI = new ProfessorUI();
+    private final StudentUI _studentUI = new StudentUI();
+    private final SubjectUI _subjectUI = new SubjectUI();
     String userInput;
 
-    private void Display_Menu(String[] commands)
-    {
-        int nr = 0;
-        for (int i = 0; i != commands.length; i++){
-            System.out.println(++nr + "." + commands[i]);
-        }
-    }
+
     public void Main_Menu()
     {
         final String[] commands =
@@ -43,13 +43,13 @@ public class AdminSystem
         switch (userInput)
         {
             case "1":
-                Student_Menu();
+                _studentUI.Student_Menu();
                 break;
             case "2":
-                Subject_Menu();
+                _subjectUI.Subject_Menu();
                 break;
             case "3":
-                Professor_Menu();
+                _professorUI.Professor_Menu();
                 break;
             case "4":
                 Soft_Version();
@@ -61,124 +61,7 @@ public class AdminSystem
         }
     }
 
-
-    public void Student_Menu()
-    {
-        final String[] commands =
-        {
-            " - Create a student",
-            " - Select student",
-            " - View student",
-            " - View all students",
-            " - Delete selected student\n",
-        };
-
-        System.out.println("**** Main Menu ****\n");
-
-        Display_Menu(commands);
-
-        System.out.print("Field: ");
-        userInput = _scanner.nextLine();
-        System.out.println(userInput);
-
-        switch (userInput)
-        {
-            case "1":
-                Create_Student();
-                break;
-            case "2":
-                //Select_Student();
-                break;
-            case "3":
-                Professor_Menu();
-                break;
-            case "4":
-                Soft_Version();
-                break;
-            case "5":
-                System.exit(0);
-            default:
-                Student_Menu();
-        }
-    }
-
-    public void Create_Student(){
-        //Student theStudent = new Student();
-    }
-
-    public void Select_Student(){
-        //Student theStudent = new Student();
-    }
-
-    public void View_Student(){
-        //Student theStudent = new Student();
-    }
-
-    public void View_All_Students(){
-        //Student theStudent = new Student();
-    }
-
-    public void Delete_Student(){
-        //Student theStudent = new Student();
-    }
-
-    public void Subject_Menu()
-    {
-        final String[] commands =
-        {
-            " - Create subject",
-            " - Select subject",
-            " - View subject",
-            " - View all subjects",
-            " - Delete selected subject\n",
-        };
-
-        System.out.println("**** Subject Menu ****\n");
-
-
-
-
-        System.out.print("Field: ");
-        userInput = _scanner.nextLine();
-        System.out.println(userInput);
-
-        switch (userInput)
-        {
-            case "1":
-                Create_Student();
-                break;
-            case "2":
-                //Select_Student();
-                break;
-            case "3":
-                Professor_Menu();
-                break;
-            case "4":
-                Soft_Version();
-                break;
-            case "5":
-                System.exit(0);
-            default:
-                Student_Menu();
-        }
-
-    }
-
-    public void Professor_Menu()
-    {
-        final String[] commands =
-        {
-            " - Create professor",
-            " - Select professor",
-            " - View professor",
-            " - View all professors",
-            " - Delete selected subject\n",
-        };
-    }
-
-    public void Soft_Version()
-    {
+    public void Soft_Version(){
         System.out.println(_Soft_Version);
     }
-
 }
