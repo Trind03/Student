@@ -2,12 +2,21 @@ package sas;
 
 public class Professor// implements ICommonReference
 {
-    String Name;
-    int Age;
-    Professor(String name,int age)
-    {
+    private final String Name;
+    private final int Age;
+
+    Professor(String name, int age) {
         Name = name;
         Age = age;
     }
 
+    public String getName()
+    {
+        return Name;
+    }
+
+    public int getAge()
+    {
+        return Age;
+    }
 }

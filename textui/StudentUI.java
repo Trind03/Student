@@ -6,9 +6,9 @@ import java.util.Scanner;
 
 public class StudentUI
 {
+    private static String userInput;
     private Scanner _scanner = new Scanner(System.in);
     private static ArrayList<Student> _students = new ArrayList<Student>();
-    private static String userInput;
     private final String[] Sophmore = {"Math","English","Arduino","Norwegian","CRLE","Science","History","Ceramic"};
 
     public void Student_Menu()
@@ -60,7 +60,9 @@ public class StudentUI
 
     public void Select_Student()
     {
-        //Student theStudent = new Student();
+        String name;
+        System.out.print("Student Name:");
+        name = _scanner.nextLine();
     }
 
     public void View_Student()
@@ -68,9 +70,18 @@ public class StudentUI
         //Student theStudent = new Student();
     }
 
-    public void View_All_Students()
+    public void View_All_Students() //Null exception
     {
-        //Student theStudent = new Student();
+        int Nr = 0;
+        if(!_students.isEmpty())
+        {
+            for (Student student : _students){
+                System.out.println("**** Student Number "+(++Nr)+". ****");
+                System.out.println();
+                System.out.println(student.getName());
+                System.out.println(student.getAge());
+            }
+        }
     }
 
     public void Delete_Student()
