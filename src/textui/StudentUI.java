@@ -1,20 +1,19 @@
 package textui;
 import Dependencies.Dependencies;
+import sas.Student;
+
+import java.util.ArrayList;
 
 public class StudentUI
 {
+    private static final ArrayList<Student> _students = new ArrayList<Student>();
     static String userInput;
 
     public void Student_Menu()
     {
-        final String[] commands =
-        {
-            " - Create a student",
-            " - Select student",
-            " - View student",
-            " - View all students",
-            " - Delete selected student\n",
-        };
+        final String[] commands = {" - Create a student", " - Select student", " - View student", " - View all students", " - Delete selected student\n",};
+        final String[] Sophmore = {"Math","English","Arduino","Norwegian","CRLE","Science","History","Ceramic"};
+        enum avalable_Subjects { Sophmore, }
 
         System.out.println("**** Student Menu ****\n");
 
@@ -46,23 +45,30 @@ public class StudentUI
         }
     }
 
-    public void Create_Student(){
+    public void Create_Student()
+    {
+        String name;
+        int age;
+
+    }
+
+    public void Select_Student()
+    {
         //Student theStudent = new Student();
     }
 
-    public void Select_Student(){
+    public void View_Student()
+    {
         //Student theStudent = new Student();
     }
 
-    public void View_Student(){
+    public void View_All_Students()
+    {
         //Student theStudent = new Student();
     }
 
-    public void View_All_Students(){
-        //Student theStudent = new Student();
-    }
-
-    public void Delete_Student(){
+    public void Delete_Student()
+    {
         //Student theStudent = new Student();
     }
 }

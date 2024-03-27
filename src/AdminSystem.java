@@ -12,7 +12,6 @@ import static Dependencies.Dependencies._scanner;
 public class AdminSystem
 {
     private static final String _Soft_Version = "1.2.2";
-    private static final ArrayList<Student> _students = new ArrayList<Student>();
     private static final ArrayList<Subject> _subjects = new ArrayList<Subject>();
     private static final ArrayList<Professor> _professors = new ArrayList<Professor>();
     private final ProfessorUI _professorUI = new ProfessorUI();
