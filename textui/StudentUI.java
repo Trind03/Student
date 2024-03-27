@@ -17,7 +17,6 @@ public class StudentUI
 
         System.out.println("**** Student Menu ****\n");
 
-        //AdminSystem.Display_Menu(commands);
         Dependencies.Display_Menu(commands);
 
         System.out.print("Field: ");
@@ -30,7 +29,7 @@ public class StudentUI
                 Create_Student();
                 break;
             case "2":
-                //Select_Student();
+                Select_Student();
                 break;
             case "3":
                 View_Student();
