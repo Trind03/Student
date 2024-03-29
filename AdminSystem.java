@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class AdminSystem
 {
     private final Scanner _scanner = new Scanner(System.in);
-    private static final String _Soft_Version = "1.2.2";
     private final ProfessorUI _professorUI = new ProfessorUI();
     private final StudentUI _studentUI = new StudentUI();
     String userInput;
@@ -39,7 +38,7 @@ public class AdminSystem
                 _professorUI.Professor_Menu();
                 break;
             case "3":
-                Soft_Version();
+                Soft_Version("1.2.2");
                 break;
             case "4":
                 System.exit(0);
@@ -48,7 +47,8 @@ public class AdminSystem
         }
     }
 
-    public void Soft_Version(){
-        System.out.println(_Soft_Version);
+    public void Soft_Version(String Version)
+    {
+        System.out.println("**** Currect software version: " + Version + " ****");
     }
 }
