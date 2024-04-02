@@ -5,7 +5,7 @@ public class Professor// implements ICommonReference
     private final String Name;
     private final int Age;
 
-    Professor(String name, int age) {
+    public Professor(String name, int age) {
         Name = name;
         Age = age;
     }

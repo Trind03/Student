@@ -1,4 +1,5 @@
 package textui;
+
 import java.util.Scanner;
 
 public class SubjectUI
