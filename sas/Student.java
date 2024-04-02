@@ -1,11 +1,10 @@
 package sas;
-import java.util.ArrayList;
 
 import static java.util.UUID.randomUUID;
 
 public class Student
 {
-    private final String[]Subject;
+    private final String[] Subject;
     private final String Name;
     private final int Age;
     private final String Student_ID;
