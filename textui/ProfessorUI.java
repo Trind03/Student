@@ -7,6 +7,8 @@ import java.util.Scanner;
 
 public class ProfessorUI
 {
+
+    AdminSystem admin = new AdminSystem();
     private final Scanner _scanner = new Scanner(System.in);
     private static final ArrayList<Professor> _professors = new ArrayList<Professor>();
     static String userInput;
@@ -21,7 +23,7 @@ public class ProfessorUI
             " - View professor",
             " - View all professors",
             " - Delete selected subject",
-                "- Return to main menu\n",
+            " - Return to main menu\n",
         };
 
         System.out.println("**** Professor Menu ****\n");
@@ -48,8 +50,10 @@ public class ProfessorUI
                 break;
             case "5":
                 Delete_Professor();
+                break;
             case "6":
-                //AdminSystem.Main_Menu();
+                admin.Main_Menu();
+                break;
             default:
                 Professor_Menu();
         }
@@ -71,6 +75,7 @@ public class ProfessorUI
 
     public void Select_Professor()
     {
+        System.out.print("Field: ");
         Professor_Menu();
     }
 
@@ -93,13 +98,14 @@ public class ProfessorUI
 
     public void Delete_Professor()
     {
+        System.out.print("Field: ");
         String nameToRemove = _scanner.nextLine();
-        for(int i = 0; i < _professors.size(); i++)
-        {
-            if(Objects.equals(nameToRemove, _professors.get(i).getName()))
-            {
-                System.out.println(_professors.get(i).getName() + " has been successfully removed!");
-                _professors.remove(i);
+        if (!_professors.isEmpty()){
+            for(int i = 0; i < _professors.size(); i++) {
+                if (Objects.equals(nameToRemove, _professors.get(i).getName())) {
+                    _professors.remove(i);
+                    System.out.println(_professors.get(i).getName() + " has been successfully removed!");
+                }
             }
         }
         Professor_Menu();

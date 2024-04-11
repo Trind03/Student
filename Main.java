@@ -1,10 +1,11 @@
+import textui.AdminSystem;
 
 public class Main
 {
-    /* Object with main functionality */
-    private static final AdminSystem AdminSystem = new AdminSystem();
+    private static final AdminSystem adminSys = new AdminSystem();
+
     public static void main(String[]args)
     {
-        AdminSystem.Main_Menu();
+        adminSys.Main_Menu();
     }
 }
