@@ -75,7 +75,6 @@ public class StudentUI
     public int View_Student()
     {
         Student student;
-
         for(int i = 0; i < _students.size(); i++){
             if(obj_index == i)
             {

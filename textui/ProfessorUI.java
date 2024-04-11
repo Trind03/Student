@@ -66,8 +66,10 @@ public class ProfessorUI
 
         System.out.print("Name: ");
         name = _scanner.nextLine();
+
         System.out.print("Age: ");
         age = Integer.parseInt(_scanner.nextLine());
+
         Professor professor = new Professor(name, age);
         _professors.add(professor);
         Professor_Menu();

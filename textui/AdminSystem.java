@@ -6,11 +6,11 @@ public class AdminSystem
 {
     final String[] commands =
             {
-                    "",
-                    " - Student",
-                    " - Professor",
-                    " - Check software version",
-                    " - Exit software",
+                "",
+                " - Student",
+                " - Professor",
+                " - Check software version",
+                " - Exit software",
             };
 
     private final Scanner _scanner = new Scanner(System.in);
@@ -37,7 +37,7 @@ public class AdminSystem
                 _professorUI.Professor_Menu();
                 break;
             case "3":
-                Soft_Version("1.2.2");
+                Soft_Version("1.2.3");
                 Main_Menu();
                 break;
             case "4":
