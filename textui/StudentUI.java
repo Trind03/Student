@@ -2,8 +2,6 @@ package textui;
 
 import Dependencies.Dependencies;
 import sas.Student;
-
-import javax.lang.model.type.NullType;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
@@ -74,9 +72,31 @@ public class StudentUI
         return 0;
     }
 
-    public void View_Student()
+    public int View_Student()
     {
+        Student student;
 
+        for(int i = 0; i < _students.size(); i++){
+            if(obj_index == i)
+            {
+                student = _students.get(i);
+                System.out.println("***** Selected student *****");
+                System.out.println("Name: " + student.getName());
+                System.out.println("Age: " + student.getAge());
+                System.out.println("Student Identyfier: " + student.get_Student_ID());
+                return 0;
+            }
+        }
+        return 1;
+    }
+
+    public void View_Student2()
+    {
+        if(!_students.isEmpty() && !(obj_index == 0)){
+            Student student = _students.get(obj_index);
+            System.out.println("");
+            System.out.println("" + student.getName());
+        }
     }
 
     public void View_All_Students()
