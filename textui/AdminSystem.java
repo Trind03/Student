@@ -14,8 +14,6 @@ public class AdminSystem
             };
 
     private final Scanner _scanner = new Scanner(System.in);
-    private final ProfessorUI _professorUI = new ProfessorUI();
-    private final StudentUI _studentUI = new StudentUI();
     String userInput;
 
     public void Main_Menu()
@@ -31,9 +29,11 @@ public class AdminSystem
         switch (userInput)
         {
             case "1":
+                final StudentUI _studentUI = new StudentUI();
                 _studentUI.Student_Menu();
                 break;
             case "2":
+                final ProfessorUI _professorUI = new ProfessorUI();
                 _professorUI.Professor_Menu();
                 break;
             case "3":

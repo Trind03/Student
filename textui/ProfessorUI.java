@@ -10,7 +10,7 @@ public class ProfessorUI
 
     AdminSystem admin = new AdminSystem();
     private final Scanner _scanner = new Scanner(System.in);
-    private static final ArrayList<Professor> _professors = new ArrayList<Professor>();
+    private static final ArrayList<Professor> _professors = new ArrayList<>();
     static String userInput;
 
     public void Professor_Menu()
