@@ -1,26 +1,23 @@
-import textui.ProfessorUI;
-import textui.StudentUI;
+package textui;
 
 import java.util.Scanner;
+
 public class AdminSystem
 {
+    final String[] commands =
+            {
+                "",
+                " - Student",
+                " - Professor",
+                " - Check software version",
+                " - Exit software",
+            };
+
     private final Scanner _scanner = new Scanner(System.in);
-    private final ProfessorUI _professorUI = new ProfessorUI();
-    private final StudentUI _studentUI = new StudentUI();
     String userInput;
 
     public void Main_Menu()
     {
-        final String[] commands =
-        {
-            "",
-            " - Student",
-            " - Subject",
-            " - Professor",
-            " - Check software version",
-            " - Exit software",
-        };
-
         System.out.println("**** Main Menu ****\n");
 
         Dependencies.Dependencies.Display_Menu(commands);
@@ -32,18 +29,22 @@ public class AdminSystem
         switch (userInput)
         {
             case "1":
+                final StudentUI _studentUI = new StudentUI();
                 _studentUI.Student_Menu();
                 break;
             case "2":
+                final ProfessorUI _professorUI = new ProfessorUI();
                 _professorUI.Professor_Menu();
                 break;
             case "3":
-                Soft_Version("1.2.2");
+                Soft_Version("1.2.3");
+                Main_Menu();
                 break;
             case "4":
                 System.exit(0);
             default:
                 Main_Menu();
+                break;
         }
     }
 
